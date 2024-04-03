@@ -10,24 +10,46 @@ body {
   background-color: #f8f9fa;
 }
 
-nav {
-  background-color: #28a745;
-  padding: 1.5rem 0;
+header {
+  background-color: rgb(40, 167, 69);
+  background-image: url(img/icons8-recycle-16.png);
+  background-position: center center;
+  padding: 0 0rem 2rem 0;
+  text-align: center;
 }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.menu-toggle {
+  display: none;
+}
+
+.menu-toggle span {
+  background-color: #fff;
+  display: block;
+  height: 3px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+  width: 25px;
+}
+
+.nav-menu {
+  background-color: #28a745;
+  padding: 1.5rem 0;
   display: flex;
   justify-content: center;
 }
 
-nav li {
+.nav-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-menu li {
   margin-right: 1rem;
 }
 
-nav a {
+.nav-menu a {
   color: #fff;
   text-decoration: none;
   font-size: 1.6rem;
@@ -36,16 +58,8 @@ nav a {
   transition: background-color 0.3s ease;
 }
 
-nav a:hover {
+.nav-menu a:hover {
   background-color: #218838;
-}
-
-header {
-  background-color: rgb(40, 167, 69);
-  background-image: url(img/icons8-recycle-16.png);
-  background-position: center center;
-  padding: 0 0rem 2rem 0;
-  text-align: center;
 }
 
 .banner img {
@@ -112,20 +126,38 @@ footer {
     padding: 0 0 2rem 0;
   }
 
-  nav {
-    padding: 1.5rem 0 0 0 ;
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 999;
   }
 
-  nav ul {
+  .nav-menu {
+    display: none;
+    background-color: #28a745;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .nav-menu.open {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    padding-bottom: 2rem;
   }
 
-  nav li {
-    margin-right: 0;
-    margin-bottom: 1rem;
+  .nav-menu ul {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  .nav-menu li {
+    margin: 1rem 0;
   }
 
   .banner {
@@ -152,11 +184,6 @@ footer {
   section ul {
     margin-left: 1rem;
     padding: 0;
-  }
-
-  button, a {
-    padding: 1.2rem 2rem;
-    font-size: 1.4rem; 
   }
 }
 
