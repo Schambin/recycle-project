@@ -1,20 +1,29 @@
 :root {
   font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
   font-size: 1.6rem;
   font-family: Arial, sans-serif;
+
   margin: 0;
   padding: 0;
+
   background-color: #f8f9fa;
 }
 
 header {
-  background-color: rgb(40, 167, 69);
+  background-color:rgb(45 155 70);
   background-image: url(img/icons8-recycle-16.png);
-  background-position: center center;
+  background-position: center;
+
   padding: 0 0rem 2rem 0;
+
   text-align: center;
 }
 
@@ -23,25 +32,28 @@ header {
 }
 
 .menu-toggle span {
-  background-color: #fff;
   display: block;
+
+  background-color: #fff;
+
+  transition: all 0.3s ease-in-out;
+
+  width: 25px;
   height: 3px;
   margin-bottom: 5px;
-  transition: all 0.3s ease-in-out;
-  width: 25px;
 }
 
 .nav-menu {
-  padding: 1.5rem 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding: 1.5rem 0;
 }
 
 .nav-menu ul {
-  list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
-  display: flex;
+  list-style: none;
 }
 
 .nav-menu li {
@@ -51,10 +63,9 @@ header {
 .nav-menu a {
   color: #fff;
   text-decoration: none;
-  font-size: 1.6rem;
   padding: 1rem 2rem;
   border-radius: 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s cubic-bezier(0.46, 0.03, 0.52, 0.96);
   background-color: #218838;
 }
 
@@ -62,11 +73,8 @@ header {
   background-color: #1db83f;
 }
 
-.banner img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
+#bannerPara {
+  color: lightyellow;
 }
 
 h1 {
@@ -113,17 +121,17 @@ footer {
   color: #fff;
   padding: 2rem 0;
   text-align: center;
+  width: 100%;
 }
 
-@media screen and (max-width: 767px) {
+footer a {
+  text-decoration: none;
+  color: rgb(187, 194, 199);
+}
+
+@media screen and (max-width: 768px) {
   section h2 {
     text-align: center;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  header {
-    padding: 0 0 2rem 0;
   }
 
   .menu-toggle {
@@ -131,8 +139,7 @@ footer {
     display: block;
     cursor: pointer;
     position: relative;
-    top: 1.5rem;
-    left: 1.5rem;
+    padding: 1.5rem 0 0 1.5rem;
     z-index: 999;
   }
 
@@ -148,8 +155,6 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    padding-bottom: 2rem; 
   }
 
   .nav-menu ul {
@@ -160,6 +165,12 @@ footer {
 
   .nav-menu li {
     margin: 2rem 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 6px 0 5rem 0;
   }
 
   .banner {
@@ -175,7 +186,7 @@ footer {
   }
   
   section h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     text-align: center; 
   }
 
